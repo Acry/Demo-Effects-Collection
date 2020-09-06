@@ -51,7 +51,7 @@ The Demo Effects Collection is licensed under the GPL.
 warning: extra qualification  
 https://www.eso.org/sdd/bin/view/SDDPublic/Gcc4Warnings#warning_extra_qualification_XXX
 
-**fixed:**
+**fixed:**  
 `ARFLAGS = crUu`  
 https://bugzilla.redhat.com/show_bug.cgi?id=1155273#c1
 
