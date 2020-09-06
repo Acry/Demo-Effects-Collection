@@ -6,8 +6,7 @@ which is able to show a lot of effects, filters and transition plugins concurren
 demo's.
 
 The Demo Effects Collection uses the great mikmod library for playing musical mods. 
-run configure --enable-mikmod=no if you don't want to use it. The Equalizer effect won't build in that case. 
-The use of mikmod is enabled by default
+run configure --enable-mikmod if you want to use it. The Equalizer effect won't build by default. 
 
 For 3D collision detection and frustum culling, The Demo Effects Collection makes use of the excellent OPCODE 
 collision detection library of Pierre Terdiman
@@ -41,7 +40,7 @@ Jonathan Corriveau
 Aumya Sarpal		 
 Brady Chang
 
-Feel free to send me your favourite effect || become a developer!
+Feel free to send me your favorite effect || become a developer!
 
 Cheers
 WP van Paassen

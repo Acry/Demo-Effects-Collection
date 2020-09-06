@@ -15,6 +15,26 @@ Fixed building for SDL 1 based demos.
 `make -j$(nproc) CXXFLAGS="-fpermissive"` - builds all,  
 but OpenGL demos are currently not working.
 
+## not building
+
+xhacks: eruption and metaballs
+
+## Crashing
+
+- demon
+- demons
+- raytracer
+- terrain
+- ufos
+
+## Bugged
+
+- plasmacube
+
+## unkown state
+
+- tunnel (do not know if it renders correctly)
+
 ## Deps
 
 - Using SDL 1, SDL_image (1)
