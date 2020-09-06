@@ -19,7 +19,7 @@
 
 #include "SDL/SDL.h"
 
-SDL_Surface* screen;
+extern SDL_Surface* screen;
 
 /* 2D */
 

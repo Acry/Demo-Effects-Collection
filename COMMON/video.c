@@ -18,6 +18,7 @@
 
 /* Information about the current video settings. */
 static const SDL_VideoInfo* info = 0;
+SDL_Surface* screen = NULL;
 
 int TDEC_init_video()
 {

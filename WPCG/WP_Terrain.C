@@ -17,6 +17,7 @@
 #include <cmath>
 #include <list>
 #include <iostream>
+#include <climits>
 #include "WP_Math.h"
 #include "WP_Vertex.h"
 #include "WP_Quad.h"
