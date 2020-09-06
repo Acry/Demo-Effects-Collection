@@ -1367,7 +1367,7 @@ void
 WP_ObjectManager::updateAll()
 {
   static WP_AnimationManager *ani = WP_AnimationManager::getInstance();
-	
+
   //move dynamic objects
   list<WP_DynamicObject*>::iterator j = dynamic_objects.begin();
   while (j != dynamic_objects.end())
@@ -1380,7 +1380,8 @@ WP_ObjectManager::updateAll()
     }
 
   cam->followObject();
-  
+  // return;
+  #if 0
   //Dynamic OBJECT IN FRUSTUM??
   j = dynamic_objects.begin();
   while (j != dynamic_objects.end())
@@ -1396,29 +1397,26 @@ WP_ObjectManager::updateAll()
 	cout << "COLLIDING ERROR" << endl;
       j++;
     }
-      
+  #endif
   list<WP_StaticObject*>::iterator i = static_objects.begin();
-  while (i != static_objects.end())
-    {	
-	//update animation
-      ani->updateAnimation(*i);
+  while (i != static_objects.end()){
+    //update animation
+    ani->updateAnimation(*i);
 
-      //OBJECT IN FRUSTUM??
-      
-      PC.SetCallback(&ColCallback, uqword(*i));
-    
-      if (PC.Collide((*i)->planesCache, cam->getFrustum(), 6, (*i)->model->getCollisionModel(*i), 
-		     reinterpret_cast<Matrix4x4*>(&(*i)->matrix)))
-	{
-		(*i)->inFrustum = PC.GetContactStatus();
-	}
-      else
-	cout << "COLLIDING ERROR" << endl;
-      i++;
-    }
-
+    #if 0
+    //OBJECT IN FRUSTUM??
+    PC.SetCallback(&ColCallback, uqword(*i));
+    if (PC.Collide((*i)->planesCache, cam->getFrustum(), 6, (*i)->model->getCollisionModel(*i), 
+      reinterpret_cast<Matrix4x4*>(&(*i)->matrix))){
+      (*i)->inFrustum = PC.GetContactStatus();
+  } else
+    cout << "COLLIDING ERROR" << endl;
+    #endif
+    i++;
+  }
+  return;
   if (notInterpolatedFrame())	//FIXME because no collision models are created for interpolated frames only check collisions when animation is on start of frame
-  	checkCollisions();
+  checkCollisions();
 }
 
 void

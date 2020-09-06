@@ -90,7 +90,6 @@ void draw_screen( void )
   terrain->drawTerrain();
 
   //draw text
-
   state->disableDepthTest();
   state->disableLighting();
   state->disableCulling();
@@ -220,7 +219,7 @@ int main( int argc, char* argv[] )
   manager->createDynamicObject(WP_Matrix3D(TRANSLATION_MATRIX, -8.0, 6.0, -3.0), "UFO3", "ufo.MD2"); 
   manager->createDynamicObject(WP_Matrix3D(TRANSLATION_MATRIX, -4.0, 4.5, -6.0), "UFO4", "ufo.MD2");
 
-  manager->createCollisionPairs();
+  // manager->createCollisionPairs();
 
   ufo = manager->getDynamicObject();
 
@@ -235,8 +234,7 @@ int main( int argc, char* argv[] )
   Uint32 next = SDL_GetTicks() + TICK_INTERVAL; 
 
   /* time based demo loop */
-  while( 1 ) 
-    {
+  while( 1 ) {
      if ((ntime = SDL_GetTicks()) < next)
      {
 	     draw_screen();
@@ -251,7 +249,7 @@ int main( int argc, char* argv[] )
      }
      else
 	{
-     	  process_events();
+     	process_events();
   	  ufo->changeHeading(0.5);
   	  manager->updateAll();
 	  WP_DynamicObject* dobject = NULL;

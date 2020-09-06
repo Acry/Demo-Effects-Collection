@@ -62,7 +62,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" \
 	"$(DESTDIR)$(libOPCODEincludedir)"
 libLIBRARIES_INSTALL = $(INSTALL_DATA)
 LIBRARIES = $(lib_LIBRARIES)
-ARFLAGS = cru
+ARFLAGS = crUu
 libOPCODE_a_AR = $(AR) $(ARFLAGS)
 libOPCODE_a_LIBADD =
 am_libOPCODE_a_OBJECTS = Opcode.$(OBJEXT) OPC_Ray.$(OBJEXT) \

@@ -19844,7 +19844,7 @@ if test "$ac_test_CXXFLAGS" = set; then
   CXXFLAGS=$ac_save_CXXFLAGS
 elif test $ac_cv_prog_cxx_g = yes; then
   if test "$GXX" = yes; then
-    CXXFLAGS="-g -O2"
+    CXXFLAGS="-mtune=generic -Wall -Wextra -std=c++98"
   else
     CXXFLAGS="-g"
   fi
@@ -23242,7 +23242,7 @@ _ACEOF
 fi
 
 
-CFLAGS="$CFLAGS `sdl-config --cflags` -Wall -std=c89 -U__STRICT_ANSI__ -pedantic"
+CFLAGS="$CFLAGS `sdl-config --cflags` -Wall -Wextra  -std=c89 -U__STRICT_ANSI__ -pedantic"
 CPPFLAGS="$CPPFLAGS"
 LIBS="$LIBS `sdl-config --libs`"
 

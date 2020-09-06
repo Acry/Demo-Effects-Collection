@@ -134,7 +134,7 @@ void draw_screen()
   state->modelview();
 	
   state->enableDepthTest();
-  //state->enableLighting();	
+  state->enableLighting();	
   state->enableCulling();
 
   manager->drawObjects();
@@ -205,7 +205,6 @@ void init()
   current = weapons[0];
 
   //set specular 
-
   demons[0]->model->material.specular = WP_Color(0.0f,0.1f,0.1f);
   weapons[0]->model->material.specular = WP_Color(0.0f,0.4f,0.4f);
   demons[1]->model->material.specular = WP_Color(0.6f,0.9f,0.9f);
@@ -219,15 +218,13 @@ void init()
   ncategories = current->getAnimationCategories(&categories);
 
   //set animations
-  //demons[0]->setAnimationCategory(categories[0]);
-
+  demons[0]->setAnimationCategory(categories[0]);
   weapons[0]->setAnimationCategory(categories[0]);
 
 }
 
 WP_Color rayTrace(const WP_Ray3D& r, unsigned char recursion_depth)
 {
-
 			WP_Color final;
 			WP_RayHitPoint h = manager->castRay(r, recursion_depth == 0);
 			if (h.obj)
@@ -346,7 +343,7 @@ int main( int argc, char* argv[] )
   /* time based loop */
  while(true)
 {
-#if 0
+#if 1
 	  next = SDL_GetTicks() + TICK_INTERVAL;
   while( true ) 
     {
@@ -364,20 +361,29 @@ int main( int argc, char* argv[] )
      }
      else
 	{
-	  //if (trace && manager->notInterpolatedFrame())
-	//	break;
+	  if (trace && manager->notInterpolatedFrame())
+		  break;
+    process_events();
+	  if (quit_it)
+		  quit(0);
+    cam->slide(0.00,0.02,0.0);
+    cam->rotate(-0.10,0.00,0.00);
+	  light = cam->eye;
+    next = SDL_GetTicks() + TICK_INTERVAL;
 #endif
+#if 0
      	  process_events();
 	  if (quit_it)
 		quit(0);
   	  cam->slide(0.00,0.02,0.0);
   	  cam->rotate(-0.10,0.00,0.00);
 	  light = cam->eye;
-  	  //manager->updateAll();
+  	  manager->updateAll();
 	  //next = SDL_GetTicks() + TICK_INTERVAL;
 	  //break;
-//	}
- //   }
+#endif
+	}
+   }
 
   /* ray trace scene */
   cout << "RAYTRACING FRAME.... CASTING RAYS ..." << endl;

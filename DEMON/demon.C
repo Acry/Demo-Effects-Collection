@@ -244,14 +244,14 @@ int main( int argc, char* argv[] )
      }
      else
 	{
-     	  process_events();
-  	  demon->setNewHeading(heading);
-  	  weapon->setNewHeading(heading);
-  	  heading += 0.6f;
-  	  if (heading >= 360.0f)
-    		heading -= 360.0f;
-  	  manager->updateAll();
-	  next = SDL_GetTicks() + TICK_INTERVAL;
+    process_events();
+    demon->setNewHeading(heading);
+    weapon->setNewHeading(heading);
+    heading += 0.6f;
+    if (heading >= 360.0f)
+      heading -= 360.0f;
+    manager->updateAll();
+    next = SDL_GetTicks() + TICK_INTERVAL;
 	}
     }
   

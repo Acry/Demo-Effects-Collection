@@ -58,7 +58,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" \
 	"$(DESTDIR)$(libWPCGincludedir)"
 libLIBRARIES_INSTALL = $(INSTALL_DATA)
 LIBRARIES = $(lib_LIBRARIES)
-ARFLAGS = cru
+ARFLAGS = crUu
 libWPCG_a_AR = $(AR) $(ARFLAGS)
 libWPCG_a_LIBADD =
 am_libWPCG_a_OBJECTS = WP_2D.$(OBJEXT) WP_Camera.$(OBJEXT) \

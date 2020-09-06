@@ -390,7 +390,7 @@ class WP_Square: public WP_NonAnimatedModel
   WP_Square(const string& name);
   WP_Square(const WP_Square &s);
 
-  WP_Square::~WP_Square(){};
+  ~WP_Square(){};
 
   WP_Square& operator=(const WP_Square &s);
 
