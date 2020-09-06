@@ -4,6 +4,12 @@ Fork from <http://demo-effects.sourceforge.net/>
 
 **Do not have spaces in directory names!**
 
+## Intention
+
+Porting SDL -> [SDL2](https://acry.github.io/SDL2-C.html) -> [SDL2 using OpenGL-4.6-Context-with-SDL2-and-GLAD](https://github.com/Acry/OpenGL-4.6-Context-with-SDL2-and-GLAD) using GLSL.
+
+[First working SDL2 ports.](https://github.com/Acry/SDL2-Surfaces)
+
 ## Building
 `./configure` - to build without the equalizer demo  
 `./configure --enable-mikmod`  
